@@ -1,9 +1,23 @@
+// ************************************************************ //
+//
+//   URL String Sanitzer
+//   For sanitizing URLs
+//      
+//   By: @Jaakidup
+// 
+//   Example usage:
+//   console.log(Sanitizer.encode("Don't panic!")) 
+//   prints:  Don%2527t%2520panic%2521
+// ************************************************************ //
 
+'use strict';
 
-const Sanitizer = {
+const Sanitizer =  {
+
     encode(input) {
         return encodeURI(escape(input));
     },
+
     decode(input) {
         return decodeURI(unescape(input));
     },
@@ -29,10 +43,7 @@ const Sanitizer = {
             .replace(/&#x5C;/g, '\\')
             .replace(/&#96;/g, '`'));
     }
-    
 }
-
-
 export default Sanitizer;
 
 
